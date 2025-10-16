@@ -1,0 +1,9 @@
+# Node dependencies
+node_modules/
+
+# MongoDB related
+dump/            # mongodump backups
+data/            # local MongoDB data folder (if running mongod locally)
+*.bson
+*.json           # raw dump exports if you make backups
+
