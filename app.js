@@ -4,6 +4,7 @@ const { ObjectId } = require('mongodb');
 
 //initialize express app and middleware
 const app = express();
+app.use(express.json());
 
 //connect to database before starting the server
 let db;
@@ -48,4 +49,17 @@ app.get('/books/:id', (req, res) => {
     res.status(500).json({ error: 'Not a valid document id' });
   }
 
+});
+
+//route to add a new book
+app.post('/books', (req, res) => {
+  const book = req.body;
+  db.collection('books')
+    .insertOne(book)
+    .then(result => {
+      res.status(201).json(result);
+    })
+    .catch(() => {
+      res.status(500).json({ error: 'Could not create a new document' });
+    });
 });
