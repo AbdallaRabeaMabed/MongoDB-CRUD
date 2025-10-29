@@ -1,0 +1,1 @@
+This is a basic CRUD (Create, Read, Update, Delete) application built with Node.js and MongoDB. It demonstrates how to interact with a MongoDB database using a RESTful API, allowing users to perform standard operations on stored data.
